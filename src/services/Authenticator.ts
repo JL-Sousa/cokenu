@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 
-export class Athenticator {
+export class Authenticator {
   private static getExpiresIn(): number {
     return Number(process.env.ACCESS_TOKEN_EXPIRES_IN);
   }
@@ -9,7 +9,7 @@ export class Athenticator {
     return jwt.sign(
       data,
       process.env.JWT_KEY as string,
-      {expiresIn: Athenticator.getExpiresIn()}
+      {expiresIn: Authenticator.getExpiresIn()}
     )
   }
 
